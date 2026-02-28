@@ -1,4 +1,12 @@
 class ResponseFormatter {
+
+    /**
+     * 
+     * @param {any} data 
+     * @param {string} message 
+     * @param {number} statusCode 
+     * @returns {Object}
+     */
     static success(data = null, message = "success", statusCode = 200){
         return{
             success: true,
@@ -9,6 +17,13 @@ class ResponseFormatter {
         }
     }
 
+    /**
+     * 
+     * @param {any} error 
+     * @param {string} message 
+     * @param {number} statusCode 
+     * @returns {Object}
+     */
     static error(message = "success", statusCode = 500, error = null){
         return{
             success: false,
@@ -19,6 +34,11 @@ class ResponseFormatter {
         }
     }
 
+    /**
+     * 
+     * @param {any} error 
+     * @returns {Object}
+     */
     static validationError(error = null){
         return{
             success: false,
@@ -29,6 +49,14 @@ class ResponseFormatter {
         }
     }
 
+    /**
+     * 
+     * @param {any} data 
+     * @param {number} page 
+     * @param {number} limit 
+     * @param {number} total 
+     * @returns {Object}
+     */
     static paginate(data = null, page, limit, total){
         return{
             success: true,

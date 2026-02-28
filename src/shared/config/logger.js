@@ -1,5 +1,5 @@
 import winston from "winston";
-import config from "./index";
+import config from "./index.js";
 
 /**
  * Winston logger connector configuration
@@ -12,7 +12,7 @@ const logger = winston.createLogger({
         winston.format.splat(),
         winston.format.json()
     ),
-    defaultMeta: {service: "api-monitoring", slang: "yo yo honey singh"},
+    defaultMeta: {service: "api-monitoring"},
     transports: [
         new winston.transports.File({ filename: "logs/error.log", level: "error" }),
         new winston.transports.File({ filename: "logs/combined.log" })
