@@ -28,7 +28,7 @@ app.use((req, _, next) => {
     next();
 })
 
-app.get("/health", (req, res) => {
+app.get("/health", (_, res) => {
     res.status(200).json(
         ResponseFormatter.success(
             {
@@ -44,7 +44,7 @@ app.get("/health", (req, res) => {
 /**
  * Base route for API information
  */
-app.use("/", (req, res) => {
+app.use("/", (_, res) => {
     res.status(200).json(
         ResponseFormatter.success(
             {
